@@ -1,4 +1,5 @@
 import 'package:car1/Constant/Colors.dart';
+import 'package:car1/Splash/splash.dart';
 import 'package:flutter/material.dart';
 
 import 'LogIn.dart';
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LogInUser(),
+      home: Splash(),
       theme: ThemeData.dark().copyWith(
           appBarTheme: AppBarTheme(backgroundColor: kprimareycolor),
           scaffoldBackgroundColor: kprimareycolor),
