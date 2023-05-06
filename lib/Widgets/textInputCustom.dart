@@ -1,3 +1,4 @@
+import 'package:car1/Constant/Colors.dart';
 import 'package:flutter/material.dart';
 
 class TextInputCustom extends StatefulWidget {
@@ -16,11 +17,28 @@ class _TextInputCustomState extends State<TextInputCustom> {
       autofocus: false,
       obscureText: widget.hint == "Password" ? _obscureText : false,
       decoration: InputDecoration(
+        filled: true, //
+        fillColor: kprimareycolor, // لون داخل المربع
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(4),
+          borderSide: BorderSide(color: ksecondrycolor, width: 2),
+        ),
+        disabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(4),
+          borderSide: BorderSide(color: ksecondrycolor),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(4),
+          borderSide: BorderSide(color: ksecondrycolor),
+        ),
         labelText: widget.hint!,
+        labelStyle: TextStyle(color: ktherdeycolor),
+
         suffixIcon: widget.hint == "Password"
             ? IconButton(
                 icon: Icon(
                   _obscureText ? Icons.visibility : Icons.visibility_off,
+                  color: ksecondrycolor,
                 ),
                 onPressed: () {
                   setState(() {
@@ -29,12 +47,6 @@ class _TextInputCustomState extends State<TextInputCustom> {
                 },
               )
             : null,
-        enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.indigo),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.white),
-        ),
       ),
     );
   }

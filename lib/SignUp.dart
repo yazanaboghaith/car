@@ -1,3 +1,4 @@
+import 'package:car1/Constant/Colors.dart';
 import 'package:car1/User/Home/HomePageUser.dart';
 import 'package:car1/Vendor/home/HomePageVendor.dart';
 import 'package:flutter/material.dart';
@@ -73,7 +74,10 @@ class _SignupPageState extends State<SignupPage> {
                 children: [
                   Column(
                     children: [
-                      Text("User"),
+                      Text(
+                        "User",
+                        style: TextStyle(color: ksecondrycolor),
+                      ),
                       SizedBox(height: 10),
                       InkWell(
                         onTap: () {
@@ -85,12 +89,11 @@ class _SignupPageState extends State<SignupPage> {
                           width: 30,
                           height: 30,
                           decoration: BoxDecoration(
+                            color: _selectedCircle == 1
+                                ? Colors.black
+                                : Colors.white,
                             shape: BoxShape.circle,
-                            border: Border.all(
-                              color: _selectedCircle == 1
-                                  ? Colors.black
-                                  : Colors.white,
-                            ),
+                            border: Border.all(color: Colors.black),
                           ),
                         ),
                       ),
@@ -99,7 +102,7 @@ class _SignupPageState extends State<SignupPage> {
                   SizedBox(width: 20),
                   Column(
                     children: [
-                      Text("Vendor"),
+                      Text("Vendor", style: TextStyle(color: ksecondrycolor)),
                       SizedBox(height: 10),
                       InkWell(
                         onTap: () {
@@ -111,12 +114,11 @@ class _SignupPageState extends State<SignupPage> {
                           width: 30,
                           height: 30,
                           decoration: BoxDecoration(
+                            color: _selectedCircle == 2
+                                ? Colors.black
+                                : Colors.white,
                             shape: BoxShape.circle,
-                            border: Border.all(
-                              color: _selectedCircle == 2
-                                  ? Colors.black
-                                  : Colors.white,
-                            ),
+                            border: Border.all(color: Colors.black),
                           ),
                         ),
                       ),

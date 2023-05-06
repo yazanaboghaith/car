@@ -1,3 +1,4 @@
+import 'package:car1/Constant/Colors.dart';
 import 'package:car1/User/Home/HomePageUser.dart';
 import 'package:car1/Widgets/textInputCustom.dart';
 import 'package:flutter/material.dart';
@@ -34,19 +35,17 @@ class _LogInUserState extends State<LogInUser> {
                 SizedBox(height: 30),
                 Text(
                   "Welcome Back",
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  style: TextStyle(fontSize: 20, color: kbasetextcolor),
                 ),
                 SizedBox(height: 10),
                 Text(
                   "Log in to your account using email ",
-                  style: TextStyle(
-                      color: Color.fromARGB(255, 66, 72, 95), fontSize: 15),
+                  style: TextStyle(color: ksecondrycolor, fontSize: 15),
                 ),
                 SizedBox(height: 6),
                 Text(
                   "or social network",
-                  style: TextStyle(
-                      color: Color.fromARGB(255, 66, 72, 95), fontSize: 15),
+                  style: TextStyle(color: ksecondrycolor, fontSize: 15),
                 ),
                 SizedBox(height: 80),
                 Padding(

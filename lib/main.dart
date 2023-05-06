@@ -1,3 +1,4 @@
+import 'package:car1/Constant/Colors.dart';
 import 'package:flutter/material.dart';
 
 import 'LogIn.dart';
@@ -15,11 +16,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: LogInUser(),
       theme: ThemeData.dark().copyWith(
-        appBarTheme: AppBarTheme(
-          backgroundColor: Color.fromARGB(255, 21, 28, 55),
-        ),
-        scaffoldBackgroundColor: Color.fromARGB(255, 21, 28, 55),
-      ),
+          appBarTheme: AppBarTheme(backgroundColor: kprimareycolor),
+          scaffoldBackgroundColor: kprimareycolor),
     );
   }
 }

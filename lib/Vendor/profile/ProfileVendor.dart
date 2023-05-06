@@ -1,5 +1,6 @@
 import 'package:car1/Vendor/home/HomePageVendor.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 class ProfileVendor extends StatefulWidget {
   const ProfileVendor({Key? key}) : super(key: key);
