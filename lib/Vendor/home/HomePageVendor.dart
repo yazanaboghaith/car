@@ -20,7 +20,7 @@ class _HomePageVendorState extends State<HomePageVendor> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 1,
+        elevation: 0,
       ),
       body: SingleChildScrollView(
         child: Column(
