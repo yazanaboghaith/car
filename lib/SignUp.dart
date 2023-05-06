@@ -79,7 +79,7 @@ class _SignupPageState extends State<SignupPage> {
                         style: TextStyle(color: ksecondrycolor),
                       ),
                       SizedBox(height: 10),
-                      InkWell(
+                      GestureDetector(
                         onTap: () {
                           setState(() {
                             _selectedCircle = 1;
@@ -104,7 +104,7 @@ class _SignupPageState extends State<SignupPage> {
                     children: [
                       Text("Vendor", style: TextStyle(color: ksecondrycolor)),
                       SizedBox(height: 10),
-                      InkWell(
+                      GestureDetector(
                         onTap: () {
                           setState(() {
                             _selectedCircle = 2;
