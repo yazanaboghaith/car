@@ -1,4 +1,5 @@
 import 'package:car1/Constant/Colors.dart';
+import 'package:car1/LogIn.dart';
 import 'package:car1/User/Home/HomePageUser.dart';
 import 'package:car1/Vendor/home/HomePageVendor.dart';
 import 'package:flutter/material.dart';
@@ -17,9 +18,17 @@ class _SignupPageState extends State<SignupPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pushReplacement(
+                context, MaterialPageRoute(builder: (context) => LogInUser()));
+          },
+          icon: Icon(Icons.reset_tv_rounded),
+          color: ksecondrycolor,
+        ),
         title: Text(
           'Sign Up',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(fontWeight: FontWeight.bold, color: kbasetextcolor),
         ),
       ),
       body: SingleChildScrollView(
@@ -36,7 +45,7 @@ class _SignupPageState extends State<SignupPage> {
                 child: Text(
                   "Create New Account",
                   style: TextStyle(
-                      color: Colors.white,
+                      color: kbasetextcolor,
                       fontWeight: FontWeight.bold,
                       fontSize: 20),
                 ),
@@ -47,15 +56,13 @@ class _SignupPageState extends State<SignupPage> {
               Center(
                 child: Text(
                   "set up your username and password.",
-                  style: TextStyle(
-                      color: Color.fromARGB(255, 66, 72, 95), fontSize: 15),
+                  style: TextStyle(color: ksecondrytextcolor, fontSize: 15),
                 ),
               ),
               Center(
                 child: Text(
                   "you can always change it later.",
-                  style: TextStyle(
-                      color: Color.fromARGB(255, 66, 72, 95), fontSize: 15),
+                  style: TextStyle(color: ksecondrytextcolor, fontSize: 15),
                 ),
               ),
               SizedBox(
@@ -76,7 +83,8 @@ class _SignupPageState extends State<SignupPage> {
                     children: [
                       Text(
                         "User",
-                        style: TextStyle(color: ksecondrycolor),
+                        style: TextStyle(
+                            color: kbasetextcolor, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(height: 10),
                       GestureDetector(
@@ -102,7 +110,10 @@ class _SignupPageState extends State<SignupPage> {
                   SizedBox(width: 20),
                   Column(
                     children: [
-                      Text("Vendor", style: TextStyle(color: ksecondrycolor)),
+                      Text("Vendor",
+                          style: TextStyle(
+                              color: kbasetextcolor,
+                              fontWeight: FontWeight.bold)),
                       SizedBox(height: 10),
                       GestureDetector(
                         onTap: () {
@@ -144,10 +155,12 @@ class _SignupPageState extends State<SignupPage> {
                       SnackBar(
                           content: Text(
                             "Please select the gender.",
-                            style: TextStyle(color: Colors.white),
+                            style: TextStyle(color: kbasetextcolor),
                           ),
-                          duration: Duration(seconds: 3),
-                          backgroundColor: Colors.white12,
+                          duration: Duration(
+                            seconds: 4,
+                          ),
+                          backgroundColor: ksecondrytextcolor,
                           behavior: SnackBarBehavior.floating),
                     );
                   }
@@ -159,19 +172,13 @@ class _SignupPageState extends State<SignupPage> {
                     child: Text(
                       'Sign Up',
                       style: TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: kprimareytextcolor,
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(6),
-                    gradient: LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.topRight,
-                      colors: [
-                        Color.fromARGB(255, 110, 118, 192),
-                        Color.fromARGB(255, 62, 134, 198),
-                      ],
-                    ),
+                    color: ksecondrycolor,
                   ),
                 ),
               ),

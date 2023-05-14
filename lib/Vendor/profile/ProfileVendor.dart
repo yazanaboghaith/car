@@ -1,3 +1,4 @@
+import 'package:car1/Constant/Colors.dart';
 import 'package:car1/Vendor/home/HomePageVendor.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -14,9 +15,16 @@ class _ProfileVendorState extends State<ProfileVendor> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.reset_tv_rounded),
+          color: ksecondrycolor,
+        ),
         title: Text(
           "Profile",
-          style: TextStyle(),
+          style: TextStyle(color: kbasetextcolor, fontWeight: FontWeight.bold),
         ),
       ),
       body: SingleChildScrollView(

@@ -1,3 +1,4 @@
+import 'package:car1/Constant/Colors.dart';
 import 'package:car1/LogIn.dart';
 import 'package:car1/User/Profile/ProfileUser.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +33,7 @@ class _HomePageUserState extends State<HomePageUser> {
                 },
                 child: Text(
                   "Profile",
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(color: kprimareytextcolor),
                 ),
               ),
               SizedBox(
@@ -42,7 +43,7 @@ class _HomePageUserState extends State<HomePageUser> {
                 onPressed: () {},
                 child: Text(
                   "Info",
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(color: kprimareytextcolor),
                 ),
               ),
               SizedBox(

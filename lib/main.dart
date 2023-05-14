@@ -2,8 +2,6 @@ import 'package:car1/Constant/Colors.dart';
 import 'package:car1/Splash/splash.dart';
 import 'package:flutter/material.dart';
 
-import 'LogIn.dart';
-
 void main() {
   runApp(const MyApp());
 }

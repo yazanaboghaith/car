@@ -14,6 +14,7 @@ class _TextInputCustomState extends State<TextInputCustom> {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      style: TextStyle(color: kbasetextcolor),
       autofocus: false,
       obscureText: widget.hint == "Password" ? _obscureText : false,
       decoration: InputDecoration(
