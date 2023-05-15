@@ -60,12 +60,13 @@ class _SignInScreenState extends State<SignInScreen> {
             child: Container(
               height: _large
                   ? _height / 4
-                  : (_medium ? _height / 3.75 : _height / 3.5),
+                  : (_medium ? _height / 2.8 : _height / 3.5),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
+                  //تدرج لون رأسية الصفحة
                   colors: [
-                    Color.fromARGB(255, 241, 240, 238),
-                    Color.fromARGB(195, 24, 1, 9)
+                    Color.fromARGB(255, 5, 3, 0),
+                    Color.fromARGB(195, 255, 255, 255)
                   ],
                 ),
               ),
@@ -80,11 +81,11 @@ class _SignInScreenState extends State<SignInScreen> {
           margin: EdgeInsets.only(
               top: _large
                   ? _height / 30
-                  : (_medium ? _height / 25 : _height / 20)),
+                  : (_medium ? _height / 14 : _height / 20)),
           child: Image.asset(
             'photo/background.png',
-            height: _height / 4.5,
-            width: _width / 3.5,
+            height: _height / 4.3,
+            width: _width / 2.2,
           ),
         ),
       ],
@@ -216,9 +217,10 @@ class _SignInScreenState extends State<SignInScreen> {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(20.0)),
           gradient: LinearGradient(
+            //لون تدرج الزر
             colors: <Color>[
-              Color.fromARGB(255, 241, 239, 236),
-              Color.fromARGB(255, 24, 0, 8)
+              Color.fromARGB(255, 0, 0, 0),
+              Color.fromARGB(255, 255, 255, 255)
             ],
           ),
         ),
@@ -258,8 +260,6 @@ class _SignInScreenState extends State<SignInScreen> {
             onTap: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => SignupPage()));
-
-              // print("Routing to Sign up screen");
             },
             child: Text(
               "Sign up",
@@ -275,9 +275,6 @@ class _SignInScreenState extends State<SignInScreen> {
   }
 }
 
-//==================
-// custom shape
-//==================
 class CustomShapeClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
@@ -328,9 +325,6 @@ class CustomShapeClipper2 extends CustomClipper<Path> {
   bool shouldReclip(CustomClipper oldClipper) => true;
 }
 
-//==================
-//  Custom AppBar
-//==================
 class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -342,8 +336,10 @@ class CustomAppBar extends StatelessWidget {
         width: width,
         padding: EdgeInsets.only(left: 15, top: 25),
         decoration: BoxDecoration(
-          gradient:
-              LinearGradient(colors: [Colors.orange[200]!, Colors.pinkAccent]),
+          gradient: LinearGradient(colors: [
+            Color.fromARGB(255, 252, 250, 248),
+            Color.fromARGB(255, 14, 1, 5)
+          ]),
         ),
         child: Row(
           children: <Widget>[
