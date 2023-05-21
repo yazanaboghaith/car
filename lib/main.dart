@@ -15,8 +15,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Splash(),
       theme: ThemeData.dark().copyWith(
-          appBarTheme: AppBarTheme(backgroundColor: kprimareycolor),
-          scaffoldBackgroundColor: kprimareycolor),
+          appBarTheme: AppBarTheme(backgroundColor: Colors.blue),
+          scaffoldBackgroundColor: ksecondrycolor),
     );
   }
 }

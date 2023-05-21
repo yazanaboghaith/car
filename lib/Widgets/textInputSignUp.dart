@@ -16,7 +16,7 @@ class _textInputSignUpState extends State<textInputSignUp> {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      style: TextStyle(color: kbasetextcolor),
+      style: TextStyle(color: kprimareycolor),
       cursorColor: ksecondrycolor,
       obscureText:
           widget.hint == "password" || widget.hint == "Confirm Password"

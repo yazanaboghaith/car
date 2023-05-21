@@ -14,11 +14,11 @@ class _TextInputCustomState extends State<TextInputCustom> {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      style: TextStyle(color: kbasetextcolor),
+      style: TextStyle(color: ktherdeycolor),
       autofocus: false,
       obscureText: widget.hint == "Password" ? _obscureText : false,
       decoration: InputDecoration(
-        filled: true, //
+        //hintText: "Enter user Name",
         fillColor: kprimareycolor, // لون داخل المربع
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(4),

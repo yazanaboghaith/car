@@ -1,8 +1,9 @@
 import 'package:car1/Constant/Colors.dart';
-import 'package:car1/LogIn.dart';
+import 'package:car1/accounts/LogIn.dart';
+
 import 'package:flutter/material.dart';
 
-import 'Widgets/textInputSignUp.dart';
+import '../Widgets/textInputSignUp.dart';
 
 class ForgetPassword extends StatefulWidget {
   const ForgetPassword({Key? key}) : super(key: key);
@@ -19,9 +20,9 @@ class _ForgetPasswordState extends State<ForgetPassword> {
         leading: IconButton(
           onPressed: () {
             Navigator.pushReplacement(
-                context, MaterialPageRoute(builder: (context) => LogInUser()));
+                context, MaterialPageRoute(builder: (context) => LogIn()));
           },
-          icon: Icon(Icons.reset_tv_rounded),
+          icon: Icon(Icons.arrow_back),
           color: ksecondrycolor,
         ),
       ),
@@ -33,42 +34,65 @@ class _ForgetPasswordState extends State<ForgetPassword> {
               child: Text(
                 "Forget Password",
                 style: TextStyle(
-                    color: kbasetextcolor,
+                    color: kprimareycolor,
                     fontWeight: FontWeight.bold,
                     fontSize: 25),
               ),
             ),
             SizedBox(
-              height: 10,
+              height: 18,
             ),
             Center(
               child: Text(
                 "Please enter your email address. So we'll send you link to get back into your account.",
-                style: TextStyle(color: ksecondrytextcolor, fontSize: 18),
+                style: TextStyle(color: ktherdeycolor, fontSize: 18),
               ),
             ),
             SizedBox(
-              height: 40,
+              height: 60,
             ),
-            textInputSignUp(icon: Icons.email, hint: "Email"),
+            TextField(
+              decoration: InputDecoration(
+                contentPadding: EdgeInsets.all(16.0),
+                prefixIcon: Icon(
+                  Icons.person,
+                  color: kprimareyiconcolor,
+                ),
+                hintText: "Enter your Email",
+                hintStyle: TextStyle(color: ktherdeycolor),
+                helperStyle: TextStyle(color: ktherdeycolor),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30),
+                  borderSide: BorderSide(
+                    color: kprimareycolor,
+                  ),
+                ),
+                filled: true,
+                fillColor: ksecondrycolor,
+              ),
+              style: TextStyle(color: kprimareycolor), // لون النص داخل الحقل
+            ),
             SizedBox(
               height: 50,
             ),
-            GestureDetector(
-              onTap: () {},
-              child: Container(
-                child: Center(
-                  child: Text(
-                    "Send code",
-                    style: TextStyle(color: kprimareycolor, fontSize: 25),
-                  ),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0),
                 ),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
+                padding: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width * 0.2,
+                  vertical: MediaQuery.of(context).size.height * 0.02,
+                ),
+                primary: Colors.blue,
+              ),
+              child: Text(
+                "Send Code",
+                style: TextStyle(
                   color: ksecondrycolor,
+                  fontWeight: FontWeight.bold,
                 ),
-                width: MediaQuery.of(context).size.width * 0.45,
-                height: MediaQuery.of(context).size.height * 0.05,
               ),
             ),
             SizedBox(
@@ -79,20 +103,20 @@ class _ForgetPasswordState extends State<ForgetPassword> {
               children: [
                 Text(
                   "Already have an account?",
-                  style: TextStyle(color: ksecondrytextcolor, fontSize: 15),
+                  style: TextStyle(color: ktherdeycolor, fontSize: 15),
                 ),
                 SizedBox(
-                  width: 1.6,
+                  width: 1.5,
                 ),
                 TextButton(
                     onPressed: () {
                       Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (context) => LogInUser()));
+                          MaterialPageRoute(builder: (context) => LogIn()));
                     },
                     child: Text(
                       "Log In",
                       style: TextStyle(
-                          color: kbasetextcolor,
+                          color: kprimareycolor,
                           fontSize: 18,
                           fontWeight: FontWeight.bold),
                     ))

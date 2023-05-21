@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-const kprimareycolor = Colors.white;
-const ksecondrycolor = Colors.black;
-const ktherdeycolor = Color.fromRGBO(129, 129, 129, 1);
+const kprimareycolor = Colors.black;
+const ksecondrycolor = Colors.white;
+const ktherdeycolor = Colors.grey;
 
-const kbasetextcolor = Colors.black;
-const ksecondrytextcolor = Color.fromRGBO(129, 129, 129, 1);
-const kprimareytextcolor = Colors.white;
+const kprimareyiconcolor = Colors.blueAccent;
+const kprimareybuttoncolor =
+    LinearGradient(colors: [Colors.blue, Colors.blueGrey]);

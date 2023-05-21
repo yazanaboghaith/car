@@ -14,19 +14,19 @@ class _ProfileVendorState extends State<ProfileVendor> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.reset_tv_rounded),
-          color: ksecondrycolor,
-        ),
-        title: Text(
-          "Profile",
-          style: TextStyle(color: kbasetextcolor, fontWeight: FontWeight.bold),
-        ),
-      ),
+      // appBar: AppBar(
+      //   leading: IconButton(
+      //     onPressed: () {
+      //       Navigator.pop(context);
+      //     },
+      //     icon: Icon(Icons.reset_tv_rounded),
+      //     color: ksecondrycolor,
+      //   ),
+      //   title: Text(
+      //     "Profile",
+      //     style: TextStyle(color: ksecondrycolor, fontWeight: FontWeight.bold),
+      //   ),
+      // ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16),
@@ -96,31 +96,6 @@ class _ProfileVendorState extends State<ProfileVendor> {
               )
             ],
           ),
-        ),
-      ),
-      bottomNavigationBar: BottomAppBar(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            IconButton(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ProfileVendor()));
-              },
-              icon: Icon(Icons.arrow_back),
-            ),
-            IconButton(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => HomePageVendor()));
-              },
-              icon: Icon(Icons.home),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.group_add_outlined),
-            ),
-          ],
         ),
       ),
     );
