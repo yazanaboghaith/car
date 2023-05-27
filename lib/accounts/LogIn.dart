@@ -82,21 +82,23 @@ class _LogInState extends State<LogIn> {
                                     MaterialPageRoute(
                                         builder: (context) => HomePageUser()));
                               },
-                              style: ElevatedButton.styleFrom(
+                              style: ButtonStyle(
                                 backgroundColor: MaterialStateColor.resolveWith(
                                     (states) => Colors.transparent),
                                 shadowColor: MaterialStateColor.resolveWith(
                                     (states) => Colors.transparent),
-                                shape: RoundedRectangleBorder(
+                                shape: MaterialStateProperty.all<
+                                        RoundedRectangleBorder>(
+                                    RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20.0),
-                                ),
-                                padding: EdgeInsets.symmetric(
+                                )),
+                                padding: MaterialStateProperty.all<EdgeInsets>(
+                                    EdgeInsets.symmetric(
                                   horizontal:
                                       MediaQuery.of(context).size.width * 0.2,
                                   vertical:
                                       MediaQuery.of(context).size.height * 0.02,
-                                ),
-                                primary: Colors.blue,
+                                )),
                               ),
                               child: Text(
                                 "Log In",
