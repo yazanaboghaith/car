@@ -1,4 +1,4 @@
-import 'package:car1/Cars/AddCar.dart';
+import 'package:car1/Vendor/Manager/Cars/AddCar.dart';
 import 'package:flutter/material.dart';
 
 class AddProduct extends StatefulWidget {

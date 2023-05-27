@@ -1,6 +1,6 @@
-import 'package:car1/Cars/HomePageCar.dart';
-import 'package:car1/Products/HomePageProduct.dart';
-import 'package:car1/Services/JomePageServices.dart';
+import 'package:car1/Vendor/Manager/Cars/HomePageCar.dart';
+import 'package:car1/Vendor/Manager/Products/HomePageProduct.dart';
+import 'package:car1/Vendor/Manager/Services/JomePageServices.dart';
 import 'package:flutter/material.dart';
 import 'package:fancy_bottom_navigation_2/fancy_bottom_navigation.dart';
 
@@ -16,13 +16,20 @@ class HomePageVendor extends StatefulWidget {
 }
 
 class _HomePageVendorState extends State<HomePageVendor> {
+  int? currentPage;
+  @override
+  void initState() {
+    currentPage = 1;
+    // TODO: implement initState
+    super.initState();
+  }
+
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   void _openDrawer() {
     _scaffoldKey.currentState!.openDrawer();
   }
 
-  int currentPage = 0;
   GlobalKey bottomNavigationKey = GlobalKey();
 
   @override
@@ -66,7 +73,7 @@ class _HomePageVendorState extends State<HomePageVendor> {
       ),
       body: Container(
         child: Center(
-          child: _getPage(context, currentPage),
+          child: _getPage(context, currentPage!),
         ),
       ),
       bottomNavigationBar: FancyBottomNavigation(
@@ -101,6 +108,55 @@ class _HomePageVendorState extends State<HomePageVendor> {
 
   Widget _getPage(BuildContext context, int page) {
     switch (page) {
+      case 1:
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            ElevatedButton(onPressed: () {}, child: Text("ndkcnskdnsknvks")),
+            SizedBox(
+              height: 20,
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ProfileVendor()),
+                );
+              },
+              child: Container(
+                // تخصيص تصميم واجهة المستخدم للحالة الثانية
+                decoration: BoxDecoration(
+                  color: Colors.blue, // يمكنك تغيير اللون هنا
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Column(
+                  children: [
+                    Icon(
+                      Icons.home,
+                      size: 40,
+                      color: Colors.white, // يمكنك تغيير لون الأيقونة هنا
+                    ),
+                    SizedBox(
+                      height: 3,
+                    ),
+                    Text(
+                      "Home",
+                      style: TextStyle(
+                        color: Colors.white, // يمكنك تغيير لون النص هنا
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            // اضف هنا واجهة المستخدم للحالة الثالثة
+          ],
+        );
       case 0:
         return Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -218,6 +274,55 @@ class _HomePageVendorState extends State<HomePageVendor> {
                 ),
               ),
             ),
+          ],
+        );
+      case 2:
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            // اضف هنا واجهة المستخدم للحالة الأولى
+            SizedBox(
+              height: 20,
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ProfileVendor()),
+                );
+              },
+              child: Container(
+                // تخصيص تصميم واجهة المستخدم للحالة الثانية
+                decoration: BoxDecoration(
+                  color: Colors.blue, // يمكنك تغيير اللون هنا
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Column(
+                  children: [
+                    Icon(
+                      Icons.home,
+                      size: 40,
+                      color: Colors.white, // يمكنك تغيير لون الأيقونة هنا
+                    ),
+                    SizedBox(
+                      height: 3,
+                    ),
+                    Text(
+                      "Home",
+                      style: TextStyle(
+                        color: Colors.white, // يمكنك تغيير لون النص هنا
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            // اضف هنا واجهة المستخدم للحالة الثالثة
           ],
         );
 
