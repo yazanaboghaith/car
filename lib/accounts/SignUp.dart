@@ -2,6 +2,7 @@ import 'package:car1/Constant/Colors.dart';
 
 import 'package:car1/User/Home/HomePageUser.dart';
 import 'package:car1/Vendor/home/HomePageVendor.dart';
+import 'package:car1/Widgets/textInputCustom.dart';
 import 'package:car1/accounts/LogIn.dart';
 import 'package:flutter/material.dart';
 
@@ -67,82 +68,13 @@ class _SignupPageState extends State<SignupPage> {
               SizedBox(
                 height: 60,
               ),
-              TextField(
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.all(16.0),
-                  prefixIcon: Icon(
-                    Icons.person,
-                    color: kprimareyiconcolor,
-                  ),
-                  hintText: "Enter User Name",
-                  hintStyle: TextStyle(color: ktherdeycolor),
-                  helperStyle: TextStyle(color: ktherdeycolor),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(30),
-                    borderSide: BorderSide(
-                      color: kprimareycolor,
-                    ),
-                  ),
-                  filled: true,
-                  fillColor: ksecondrycolor,
-                ),
-                style: TextStyle(color: kprimareycolor), // لون النص داخل الحقل
-              ),
+              TextInputForAll(hint: "Enter User Name", icon: Icons.person),
               SizedBox(height: 20),
-              TextField(
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.all(16.0),
-                  prefixIcon: Icon(
-                    Icons.email,
-                    color: kprimareyiconcolor,
-                  ),
-                  hintText: "Enter your Email",
-                  hintStyle: TextStyle(color: ktherdeycolor),
-                  helperStyle: TextStyle(color: ktherdeycolor),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(30),
-                    borderSide: BorderSide(
-                      color: kprimareycolor,
-                    ),
-                  ),
-                  filled: true,
-                  fillColor: ksecondrycolor,
-                ),
-                style: TextStyle(color: kprimareycolor), // لون النص داخل الحقل
-              ),
+              TextInputForAll(hint: "Enter your Email", icon: Icons.email),
               SizedBox(height: 20),
-              TextField(
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.all(16.0),
-                  prefixIcon: Icon(
-                    Icons.lock,
-                    color: kprimareyiconcolor,
-                  ),
-                  suffixIcon: IconButton(
-                    icon: Icon(
-                      _passwordVisible
-                          ? Icons.visibility
-                          : Icons.visibility_off,
-                      color: kprimareycolor,
-                    ),
-                    onPressed: () {
-                      setState(() {
-                        _passwordVisible = !_passwordVisible;
-                      });
-                    },
-                  ),
-                  hintText: "Enter your password",
-                  hintStyle: TextStyle(color: ktherdeycolor),
-                  helperStyle: TextStyle(color: ktherdeycolor),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(30),
-                    borderSide: BorderSide.none,
-                  ),
-                  filled: true,
-                  fillColor: ksecondrycolor,
-                ),
-                style: TextStyle(color: kprimareycolor),
-                obscureText: !_passwordVisible,
+              TextInputForAll(
+                hint: "Enter your Password",
+                icon: Icons.lock,
               ),
               SizedBox(height: 46),
               Row(
@@ -207,62 +139,78 @@ class _SignupPageState extends State<SignupPage> {
                 ],
               ),
               SizedBox(height: 38),
-              ElevatedButton(
-                onPressed: () {
-                  if (_selectedCircle == 1) {
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => HomePageUser()));
-                  } else if (_selectedCircle == 2) {
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => HomePageVendor()));
-                  } else if (_selectedCircle == 0) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Text(
-                              "Please select the gender.",
-                              style: TextStyle(color: ksecondrycolor),
-                            ),
-                            SizedBox(height: 8),
-                            GestureDetector(
-                              onTap: () {
-                                ScaffoldMessenger.of(context)
-                                    .hideCurrentSnackBar();
-                              },
-                              child: Text(
-                                "OK",
+              Container(
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.black26,
+                        offset: Offset(0, 4),
+                        blurRadius: 5.0)
+                  ],
+                  gradient: kprimareybuttoncolor,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: ElevatedButton(
+                  onPressed: () {
+                    if (_selectedCircle == 1) {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => HomePageUser()));
+                    } else if (_selectedCircle == 2) {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => HomePageVendor()));
+                    } else if (_selectedCircle == 0) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                "Please select the gender.",
                                 style: TextStyle(color: ksecondrycolor),
                               ),
-                            ),
-                          ],
+                              SizedBox(height: 8),
+                              GestureDetector(
+                                onTap: () {
+                                  ScaffoldMessenger.of(context)
+                                      .hideCurrentSnackBar();
+                                },
+                                child: Text(
+                                  "OK",
+                                  style: TextStyle(color: ksecondrycolor),
+                                ),
+                              ),
+                            ],
+                          ),
+                          backgroundColor: ktherdeycolor,
+                          behavior: SnackBarBehavior.floating,
                         ),
-                        backgroundColor: ktherdeycolor,
-                        behavior: SnackBarBehavior.floating,
-                      ),
-                    );
-                  }
-                },
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20.0),
+                      );
+                    }
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: MaterialStateColor.resolveWith(
+                        (states) => Colors.transparent),
+                    shadowColor: MaterialStateColor.resolveWith(
+                        (states) => Colors.transparent),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20.0),
+                    ),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: MediaQuery.of(context).size.width * 0.2,
+                      vertical: MediaQuery.of(context).size.height * 0.02,
+                    ),
+                    //  primary: Colors.blue,
                   ),
-                  padding: EdgeInsets.symmetric(
-                    horizontal: MediaQuery.of(context).size.width * 0.2,
-                    vertical: MediaQuery.of(context).size.height * 0.02,
-                  ),
-                  primary: Colors.blue,
-                ),
-                child: Text(
-                  "Sign Up",
-                  style: TextStyle(
-                    color: ksecondrycolor,
-                    fontWeight: FontWeight.bold,
+                  child: Text(
+                    "Sign Up",
+                    style: TextStyle(
+                      color: ksecondrycolor,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),

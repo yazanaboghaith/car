@@ -17,6 +17,7 @@ class HomePageVendor extends StatefulWidget {
 
 class _HomePageVendorState extends State<HomePageVendor> {
   int? currentPage;
+
   @override
   void initState() {
     currentPage = 1;
@@ -77,6 +78,7 @@ class _HomePageVendorState extends State<HomePageVendor> {
         ),
       ),
       bottomNavigationBar: FancyBottomNavigation(
+        initialSelection: 1,
         tabs: [
           TabData(
             iconData: Icons.design_services_sharp,
