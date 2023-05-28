@@ -1,10 +1,8 @@
 import 'package:car1/Constant/Colors.dart';
-import 'package:car1/Widgets/textInputCustom.dart';
+import 'package:car1/Widgets/TextInputForAll.dart';
 import 'package:car1/accounts/LogIn.dart';
 
 import 'package:flutter/material.dart';
-
-import '../Widgets/textInputSignUp.dart';
 
 class ForgetPassword extends StatefulWidget {
   const ForgetPassword({Key? key}) : super(key: key);

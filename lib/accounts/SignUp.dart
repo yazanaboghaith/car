@@ -1,8 +1,7 @@
 import 'package:car1/Constant/Colors.dart';
-
 import 'package:car1/User/Home/HomePageUser.dart';
 import 'package:car1/Vendor/home/HomePageVendor.dart';
-import 'package:car1/Widgets/textInputCustom.dart';
+import 'package:car1/Widgets/TextInputForAll.dart';
 import 'package:car1/accounts/LogIn.dart';
 import 'package:flutter/material.dart';
 
@@ -12,8 +11,9 @@ class SignupPage extends StatefulWidget {
 }
 
 class _SignupPageState extends State<SignupPage> {
-  int _selectedCircle = 0; // قيمة الدائرة الابتدائية
   bool _passwordVisible = false;
+  String? Person;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,8 +35,7 @@ class _SignupPageState extends State<SignupPage> {
         child: Padding(
           padding: EdgeInsets.all(16.0),
           child: Column(
-            crossAxisAlignment:
-                CrossAxisAlignment.stretch, //ليمتد ع كامل عرض الشاشة
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               SizedBox(
                 height: 20,
@@ -80,61 +79,58 @@ class _SignupPageState extends State<SignupPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Column(
-                    children: [
-                      Text(
-                        "User",
-                        style: TextStyle(
-                            color: kprimareycolor, fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(height: 10),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            _selectedCircle = 1;
-                          });
-                        },
-                        child: Container(
-                          width: 30,
-                          height: 30,
-                          decoration: BoxDecoration(
-                            color: _selectedCircle == 1
-                                ? Colors.black
-                                : Colors.white,
-                            shape: BoxShape.circle,
-                            border: Border.all(color: Colors.black),
-                          ),
-                        ),
-                      ),
-                    ],
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.04,
+                    width: MediaQuery.of(context).size.width * 0.072,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black, width: 1.5),
+                      borderRadius: BorderRadius.circular(120),
+                    ),
+                    child: Radio(
+                      value: "User",
+                      groupValue: Person,
+                      onChanged: (value) {
+                        setState(() {
+                          Person = value.toString();
+                        });
+                      },
+                      activeColor: Colors.black,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(9),
+                    child: Text(
+                      "User",
+                      style: TextStyle(
+                          color: kprimareycolor, fontWeight: FontWeight.bold),
+                    ),
                   ),
                   SizedBox(width: 20),
-                  Column(
-                    children: [
-                      Text("Vendor",
-                          style: TextStyle(
-                              color: kprimareycolor,
-                              fontWeight: FontWeight.bold)),
-                      SizedBox(height: 10),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            _selectedCircle = 2;
-                          });
-                        },
-                        child: Container(
-                          width: 30,
-                          height: 30,
-                          decoration: BoxDecoration(
-                            color: _selectedCircle == 2
-                                ? Colors.black
-                                : Colors.white,
-                            shape: BoxShape.circle,
-                            border: Border.all(color: Colors.black),
-                          ),
-                        ),
-                      ),
-                    ],
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.04,
+                    width: MediaQuery.of(context).size.width * 0.072,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black, width: 1.5),
+                      borderRadius: BorderRadius.circular(120),
+                    ),
+                    child: Radio(
+                      value: "Vendor",
+                      groupValue: Person,
+                      onChanged: (value) {
+                        setState(() {
+                          Person = value.toString();
+                        });
+                      },
+                      activeColor: Colors.black,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(9),
+                    child: Text(
+                      "Vendor",
+                      style: TextStyle(
+                          color: kprimareycolor, fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ],
               ),
@@ -152,17 +148,17 @@ class _SignupPageState extends State<SignupPage> {
                 ),
                 child: ElevatedButton(
                   onPressed: () {
-                    if (_selectedCircle == 1) {
+                    if (Person == "User") {
                       Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                               builder: (context) => HomePageUser()));
-                    } else if (_selectedCircle == 2) {
+                    } else if (Person == "Vendor") {
                       Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                               builder: (context) => HomePageVendor()));
-                    } else if (_selectedCircle == 0) {
+                    } else if (Person == null) {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: Column(
@@ -197,14 +193,16 @@ class _SignupPageState extends State<SignupPage> {
                     shadowColor: MaterialStateColor.resolveWith(
                         (states) => Colors.transparent),
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                    )),
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                      ),
+                    ),
                     padding: MaterialStateProperty.all<EdgeInsets>(
-                        EdgeInsets.symmetric(
-                      horizontal: MediaQuery.of(context).size.width * 0.2,
-                      vertical: MediaQuery.of(context).size.height * 0.02,
-                    )),
+                      EdgeInsets.symmetric(
+                        horizontal: MediaQuery.of(context).size.width * 0.2,
+                        vertical: MediaQuery.of(context).size.height * 0.02,
+                      ),
+                    ),
                   ),
                   child: Text(
                     "Sign Up",

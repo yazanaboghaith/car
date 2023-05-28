@@ -1,6 +1,6 @@
 import 'package:car1/Constant/Colors.dart';
 import 'package:car1/User/Home/HomePageUser.dart';
-import 'package:car1/Widgets/textInputCustom.dart';
+import 'package:car1/Widgets/TextInputForAll.dart';
 import 'package:car1/accounts/ForgetPassword.dart';
 import 'package:car1/accounts/SignUp.dart';
 import 'package:flutter/material.dart';
