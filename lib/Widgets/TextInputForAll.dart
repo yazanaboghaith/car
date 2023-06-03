@@ -23,8 +23,10 @@ class _TextInputForAllState extends State<TextInputForAll> {
       obscureText: widget.hint == "Enter your Password" ? secure : false,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       validator: ((value) {
-        if (value == null || value.isEmpty) {
-          return 'Required field';
+        if (widget.hint != "Add your search") {
+          if (value == null || value.isEmpty) {
+            return 'Required field';
+          }
         }
       }),
       controller: widget.controller,

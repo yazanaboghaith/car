@@ -2,8 +2,6 @@ import 'package:car1/Constant/Colors.dart';
 import 'package:car1/Vendor/Manager/Cars/HomePageCar.dart';
 import 'package:car1/Vendor/Manager/Products/HomePageProduct.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class HomePageServices extends StatelessWidget {
   const HomePageServices({Key? key}) : super(key: key);
@@ -11,8 +9,9 @@ class HomePageServices extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
+      children: [
         GestureDetector(
           onTap: () {
             Navigator.push(context,
