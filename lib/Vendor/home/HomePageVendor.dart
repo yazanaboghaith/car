@@ -1,11 +1,10 @@
-import 'package:car1/Vendor/Manager/Additems.dart';
 import 'package:car1/Vendor/Manager/Cars/HomePageCar.dart';
 
 import 'package:car1/Vendor/Manager/Products/HomePageProduct.dart';
 import 'package:car1/Vendor/Manager/Services/JomePageServices.dart';
 import 'package:fancy_bottom_navigation_2/fancy_bottom_navigation.dart';
 import 'package:flutter/material.dart';
-import 'package:car1/Widgets/ListCars.dart';
+import 'package:car1/List/ListCars.dart';
 import 'package:car1/Widgets/TextInputForAll.dart';
 import 'package:car1/Constant/Colors.dart';
 import 'package:car1/Vendor/profile/ProfileVendor.dart';
@@ -140,7 +139,8 @@ class _HomePageVendorState extends State<HomePageVendor> {
                 children: [
                   Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.only(
+                          right: 6, left: 8, top: 14, bottom: 9),
                       child: TextInputForAll(
                         hint: "Add your search",
                         icon: Icons.search,
@@ -151,18 +151,26 @@ class _HomePageVendorState extends State<HomePageVendor> {
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
                       decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(12)),
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(
+                          color: kprimareyiconcolor,
+                          width: 1.5,
+                        ),
+                      ),
                       child: IconButton(
                         icon: Icon(
                           Icons.add,
                           color: kprimareyiconcolor,
                         ),
                         onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Addgoods()));
+                          PopupMenuButton(
+                            itemBuilder: (context) =>
+                                [PopupMenuItem(child: Text("data"))],
+                          );
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (ctx) => AddProducts()));
                         },
                       ),
                     ),
@@ -189,13 +197,16 @@ class _HomePageVendorState extends State<HomePageVendor> {
                   scrollDirection: Axis.horizontal,
                   itemCount: Listcars.length,
                   itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: ListCars(
-                        child: Text(
-                          Listcars[index],
-                          style: TextStyle(
-                            color: kprimareycolor,
+                    return SizedBox(
+                      width: 150,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: ListCars(
+                          child: Text(
+                            Listcars[index],
+                            style: TextStyle(
+                              color: kprimareycolor,
+                            ),
                           ),
                         ),
                       ),
@@ -224,13 +235,16 @@ class _HomePageVendorState extends State<HomePageVendor> {
                   scrollDirection: Axis.horizontal,
                   itemCount: ListProducts.length,
                   itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: ListCars(
-                        child: Text(
-                          ListProducts[index],
-                          style: TextStyle(
-                            color: kprimareycolor,
+                    return SizedBox(
+                      width: 150,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: ListCars(
+                          child: Text(
+                            ListProducts[index],
+                            style: TextStyle(
+                              color: kprimareycolor,
+                            ),
                           ),
                         ),
                       ),
@@ -305,124 +319,7 @@ class _HomePageVendorState extends State<HomePageVendor> {
         );
 
       case 0:
-        return Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            GestureDetector(
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => HomePageCar()));
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                  color: ktherdeycolor,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Column(
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Image.asset(
-                        'photo/background.png',
-                        height: MediaQuery.of(context).size.height * 0.17,
-                        width: MediaQuery.of(context).size.width * 0.9,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 3,
-                    ),
-                    Text(
-                      "Cars",
-                      style: TextStyle(
-                          color: ksecondrycolor,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 30),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => HomePageProduct()));
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                  color: ktherdeycolor,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Column(
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Image.asset(
-                        'photo/background.png',
-                        height: MediaQuery.of(context).size.height * 0.17,
-                        width: MediaQuery.of(context).size.width * 0.9,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 3,
-                    ),
-                    Text(
-                      "Products",
-                      style: TextStyle(
-                          color: ksecondrycolor,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 30),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => HomePageServices()));
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                  color: ktherdeycolor,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Column(
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Image.asset(
-                        'photo/background.png',
-                        height: MediaQuery.of(context).size.height * 0.17,
-                        width: MediaQuery.of(context).size.width * 0.9,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 3,
-                    ),
-                    Text(
-                      "Services",
-                      style: TextStyle(
-                          color: ksecondrycolor,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 30),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        );
+        return HomePageServices();
       case 2:
         return Column(
           mainAxisAlignment: MainAxisAlignment.center,

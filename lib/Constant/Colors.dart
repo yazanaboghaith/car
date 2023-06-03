@@ -4,7 +4,7 @@ const kprimareycolor = Color.fromARGB(255, 0, 110, 143);
 const ksecondrycolor = Colors.white;
 const ktherdeycolor = Colors.grey;
 
-const kprimareyiconcolor = Colors.blueAccent;
+const kprimareyiconcolor = Color.fromARGB(255, 0, 110, 143);
 const kprimareybuttoncolor = LinearGradient(
     begin: Alignment.centerLeft,
     end: Alignment.centerRight,
