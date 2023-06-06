@@ -1,6 +1,3 @@
-import 'package:car1/Constant/Colors.dart';
-import 'package:car1/Vendor/Manager/Cars/HomePageCar.dart';
-import 'package:car1/Vendor/Manager/Products/HomePageProduct.dart';
 import 'package:flutter/material.dart';
 
 class HomePageServices extends StatelessWidget {
@@ -9,118 +6,63 @@ class HomePageServices extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        GestureDetector(
-          onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => HomePageCar()));
-          },
-          child: Container(
-            decoration: BoxDecoration(
-              color: ktherdeycolor,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Column(
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: Image.asset(
-                    'photo/background.png',
-                    height: MediaQuery.of(context).size.height * 0.17,
-                    width: MediaQuery.of(context).size.width * 0.9,
-                    fit: BoxFit.cover,
+        Card(
+          child: Row(
+            children: [
+              Image(
+                image: AssetImage(
+                  "photo/background.png",
+                ),
+                height: MediaQuery.of(context).size.height * 0.16,
+                width: MediaQuery.of(context).size.width * 0.5,
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.3,
+              ),
+              Column(
+                children: [
+                  Text("Edit Cars"),
+                  SizedBox(
+                    height: 45,
                   ),
-                ),
-                SizedBox(
-                  height: 3,
-                ),
-                Text(
-                  "Cars",
-                  style: TextStyle(
-                      color: ksecondrycolor,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 30),
-                ),
-              ],
-            ),
+                  Text(" Cars")
+                ],
+              ),
+            ],
           ),
         ),
         SizedBox(
           height: 20,
         ),
-        GestureDetector(
-          onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => HomePageProduct()));
-          },
-          child: Container(
-            decoration: BoxDecoration(
-              color: ktherdeycolor,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Column(
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: Image.asset(
-                    'photo/background.png',
-                    height: MediaQuery.of(context).size.height * 0.17,
-                    width: MediaQuery.of(context).size.width * 0.9,
-                    fit: BoxFit.cover,
-                  ),
+        Card(
+          child: Row(
+            children: [
+              Image(
+                image: AssetImage(
+                  "photo/background.png",
                 ),
-                SizedBox(
-                  height: 3,
-                ),
-                Text(
-                  "Products",
-                  style: TextStyle(
-                      color: ksecondrycolor,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 30),
-                ),
-              ],
-            ),
+                height: 10,
+                width: 10,
+              ),
+            ],
           ),
         ),
         SizedBox(
           height: 20,
         ),
-        GestureDetector(
-          onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => HomePageServices()));
-          },
-          child: Container(
-            decoration: BoxDecoration(
-              color: ktherdeycolor,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Column(
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: Image.asset(
-                    'photo/background.png',
-                    height: MediaQuery.of(context).size.height * 0.17,
-                    width: MediaQuery.of(context).size.width * 0.9,
-                    fit: BoxFit.cover,
-                  ),
+        Card(
+          child: Row(
+            children: [
+              Image(
+                image: AssetImage(
+                  "photo/background.png",
                 ),
-                SizedBox(
-                  height: 3,
-                ),
-                Text(
-                  "Services",
-                  style: TextStyle(
-                      color: ksecondrycolor,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 30),
-                ),
-              ],
-            ),
+                height: 10,
+                width: 10,
+              ),
+            ],
           ),
         ),
       ],

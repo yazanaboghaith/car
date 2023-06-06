@@ -1,8 +1,10 @@
+import 'package:car1/Auth/LogIn.dart';
 import 'package:car1/Constant/Colors.dart';
 import 'package:car1/User/Home/HomePageUser.dart';
-import 'package:car1/Vendor/home/HomePageVendor.dart';
-import 'package:car1/Widgets/TextInputForAll.dart';
-import 'package:car1/accounts/LogIn.dart';
+
+import 'package:car1/Constant/TextInputForAll.dart';
+import 'package:car1/Widgets/SelectVendor.dart';
+
 import 'package:flutter/material.dart';
 
 class SignupPage extends StatefulWidget {
@@ -55,13 +57,13 @@ class _SignupPageState extends State<SignupPage> {
               Center(
                 child: Text(
                   "set up your username and password.",
-                  style: TextStyle(color: ktherdeycolor, fontSize: 15),
+                  style: TextStyle(color: kprimareycolor, fontSize: 15),
                 ),
               ),
               Center(
                 child: Text(
                   "you can always change it later.",
-                  style: TextStyle(color: ktherdeycolor, fontSize: 15),
+                  style: TextStyle(color: kprimareycolor, fontSize: 15),
                 ),
               ),
               SizedBox(
@@ -74,6 +76,11 @@ class _SignupPageState extends State<SignupPage> {
               TextInputForAll(
                 hint: "Enter your Password",
                 icon: Icons.lock,
+              ),
+              SizedBox(height: 20),
+              TextInputForAll(
+                hint: "Enter your phone",
+                icon: Icons.phone,
               ),
               SizedBox(height: 46),
               Row(
@@ -157,7 +164,7 @@ class _SignupPageState extends State<SignupPage> {
                       Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => HomePageVendor()));
+                              builder: (context) => SelectVendor()));
                     } else if (Person == null) {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
@@ -165,7 +172,7 @@ class _SignupPageState extends State<SignupPage> {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Text(
-                                "Please select the gender.",
+                                "Entry must be specified",
                                 style: TextStyle(color: ksecondrycolor),
                               ),
                               SizedBox(height: 8),

@@ -1,8 +1,6 @@
-import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:car1/Auth/LogIn.dart';
 
-import 'package:car1/User/Home/HomePageUser.dart';
-import 'package:car1/accounts/LogIn.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
